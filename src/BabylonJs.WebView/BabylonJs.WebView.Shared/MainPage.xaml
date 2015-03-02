@@ -1,0 +1,28 @@
+﻿<Page
+    x:Class="BabylonJs.WebView.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BabylonJs.WebView"
+    xmlns:toolkit="using:HybridWebApp.Toolkit.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <ProgressBar Margin="0,10,0,0"  
+                     IsIndeterminate="True" 
+                     Loaded="ProgressBar_Loaded" 
+                     Visibility="Collapsed" 
+                     VerticalAlignment="Top" 
+                     HorizontalAlignment="Stretch" />
+        <toolkit:HybridWebView x:Name="WebHost" Margin="0,20,0,0" WebUri="ms-appx-web:///www/app.html" Ready="WebHost_Ready" MessageReceived="WebHost_MessageReceived" EnableLoadingOverlay="False" NavigateOnLoad="False" />
+    </Grid>
+    <Page.BottomAppBar>
+        <CommandBar x:Name="CommandBar">
+            <CommandBar.PrimaryCommands>
+                <AppBarButton Icon="OpenFile" Click="ImportStlFile_Click" Label="Import" />
+                <AppBarButton x:Name="SaveButton" IsEnabled="False" Icon="Save" Click="SaveConverted_Click" Label="Save" />
+            </CommandBar.PrimaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
+</Page>
