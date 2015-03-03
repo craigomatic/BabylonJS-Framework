@@ -47,10 +47,6 @@ namespace BabylonJs.WebView
             {
                 if (success)
                 {
-                    var appJsFile = await Windows.Storage.StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///www/js/app.js"));
-                    var appJs = await Windows.Storage.FileIO.ReadTextAsync(appJsFile);
-
-                    await WebHost.Interpreter.LoadAsync(appJs);
                     await WebHost.Interpreter.LoadFrameworkAsync(HybridWebApp.Framework.WebToHostMessageChannel.IFrame);
 
                     await WebHost.Interpreter.EvalAsync("app.initScene('canvas');");
