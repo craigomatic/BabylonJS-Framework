@@ -219,22 +219,27 @@ namespace BabylonJs.Framework.Converters
             return token;
         }
         
-        private void _StoreOrIndexVertex(ConversionState state, Vector3 v1)
+        private void _StoreOrIndexVertex(ConversionState state, Vector3 vertex)
         {
-            if (!state.Vertices.Contains(v1))
+            //swap the y and z values (invert the y) to acount for right-hand coordinate system vs left hand coordinate system
+            var tmp = vertex.Y * -1;
+            vertex.Y = vertex.Z;
+            vertex.Z = tmp;
+
+            if (!state.Vertices.Contains(vertex))
             {
-                state.Vertices.Add(v1);
+                state.Vertices.Add(vertex);
                 state.Indices.Add(state.CurrentIndex);
 
                 //store index for later
-                state.Index.Add(v1, state.CurrentIndex);
+                state.Index.Add(vertex, state.CurrentIndex);
 
                 state.CurrentIndex++;
             }
             else
             {
                 //it must be indexed, where?
-                state.Indices.Add(state.Index[v1]);
+                state.Indices.Add(state.Index[vertex]);
             }
         }
         
