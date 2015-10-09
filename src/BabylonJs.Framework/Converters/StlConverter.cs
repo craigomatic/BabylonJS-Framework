@@ -19,7 +19,7 @@ namespace BabylonJs.Framework.Converters
             this.Stream = stream;
         }
 
-        public async Task<string> ToJsonAsync()
+        public async override Task<string> ToJsonAsync()
         {
             //STL spec ref: http://en.wikipedia.org/wiki/STL_(file_format)
 

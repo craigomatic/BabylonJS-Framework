@@ -97,6 +97,7 @@ namespace BabylonJs.WebView
 
             var filePicker = new FileOpenPicker();
             filePicker.FileTypeFilter.Add(".stl");
+            filePicker.FileTypeFilter.Add(".amf");
 
 #if WINDOWS_PHONE_APP
             filePicker.PickSingleFileAndContinue();
@@ -114,10 +115,8 @@ namespace BabylonJs.WebView
                 _ProgressBar.Visibility = Windows.UI.Xaml.Visibility.Visible;
                 _ProgressBar.IsEnabled = true;
 
-                var s = await file.OpenReadAsync();
-
-                var stlConverter = new StlConverter(s.AsStream());
-                _LastJsonLoaded = await stlConverter.ToJsonAsync();
+                var converter = await ConversionFactory.GetConverter(file);
+                _LastJsonLoaded = await converter.ToJsonAsync();
 
                 await WebHost.Interpreter.EvalAsync(string.Format("app.loadBabylonModel('{0}');", _LastJsonLoaded));
 

@@ -25,4 +25,14 @@ namespace BabylonJs.Framework
         public const string EndFacet = "endfacet";
         public const string EndSolid = "endsolid";
     }
+
+    public static class AmfConstants
+    {
+        public const string Metadata = "metadata";
+        public const string Object = "object";
+        public const string Mesh = "mesh";
+        public const string Vertices = "vertices";
+        public const string Vertex = "vertex";
+        public const string Material = "material";
+    }
 }

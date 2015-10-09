@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BabylonJs.Framework.Converters
 {
-    public abstract class BabylonConverter
+    public abstract class BabylonConverter : IBabylonConverter
     {
         protected async Task<string> ToJsonAsync(ConversionState state)
         {
@@ -35,5 +35,7 @@ namespace BabylonJs.Framework.Converters
 
             return await Task.Factory.StartNew(() => JsonConvert.SerializeObject(babylonFile, new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() }));
         }
+
+        public abstract Task<string> ToJsonAsync();
     }
 }

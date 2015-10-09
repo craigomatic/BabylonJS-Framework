@@ -42,7 +42,9 @@
   <ItemGroup>
     <Compile Include="Constants.cs" />
     <Compile Include="ConversionState.cs" />
+    <Compile Include="Converters\AmfConverter.cs" />
     <Compile Include="Converters\BabylonConverter.cs" />
+    <Compile Include="Converters\IBabylonConverter.cs" />
     <Compile Include="Model\BabylonCamera.cs" />
     <Compile Include="Model\BabylonFile.cs" />
     <Compile Include="Model\BabylonMesh.cs" />
