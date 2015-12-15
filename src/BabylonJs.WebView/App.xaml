@@ -2,6 +2,7 @@
     x:Class="BabylonJs.WebView.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:BabylonJs.WebView">
+    xmlns:local="using:BabylonJs.WebView"
+    RequestedTheme="Light">
 
 </Application>

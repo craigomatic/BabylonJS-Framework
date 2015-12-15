@@ -9,9 +9,9 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <ProgressBar Margin="0,10,0,0"  
+        <ProgressBar x:Name="ProgressBar" 
+                     Margin="0,10,0,0"  
                      IsIndeterminate="True" 
-                     Loaded="ProgressBar_Loaded" 
                      Visibility="Collapsed" 
                      VerticalAlignment="Top" 
                      HorizontalAlignment="Stretch" />

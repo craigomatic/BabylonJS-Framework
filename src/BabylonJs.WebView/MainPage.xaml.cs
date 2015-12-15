@@ -1,6 +1,4 @@
-﻿using BabylonJs.Framework;
-using BabylonJs.Framework.Converters;
-using HybridWebApp.Framework;
+﻿using HybridWebApp.Framework;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -19,7 +17,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
+// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
 namespace BabylonJs.WebView
 {
@@ -28,17 +26,11 @@ namespace BabylonJs.WebView
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        private string _LastJsonLoaded;
+
         public MainPage()
         {
             this.InitializeComponent();
-        }
-
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
-#if WINDOWS_PHONE_APP
-            SaveButton.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-#endif
-            base.OnNavigatedTo(e);
         }
 
         private void WebHost_Ready(object sender, EventArgs e)
@@ -61,7 +53,7 @@ namespace BabylonJs.WebView
 
         private void WebHost_MessageReceived(HybridWebApp.Toolkit.Controls.HybridWebView sender, HybridWebApp.Framework.Model.ScriptMessage args)
         {
-            switch(args.Type)
+            switch (args.Type)
             {
                 case KnownMessageTypes.Log:
                     {
@@ -70,23 +62,6 @@ namespace BabylonJs.WebView
                     }
             }
         }
-
-#if WINDOWS_PHONE_APP
-
-        internal async Task CompletePicker(Windows.ApplicationModel.Activation.FileOpenPickerContinuationEventArgs continuationArgsWebAuth)
-        {
-            if (!continuationArgsWebAuth.Files.Any())
-            {
-                return;
-            }
-
-            var file = continuationArgsWebAuth.Files[0];
-
-            await _LoadFileAsync(file);
-        }
-#endif
-
-        private string _LastJsonLoaded;
 
         private async void ImportStlFile_Click(object sender, RoutedEventArgs e)
         {
@@ -99,32 +74,9 @@ namespace BabylonJs.WebView
             filePicker.FileTypeFilter.Add(".stl");
             filePicker.FileTypeFilter.Add(".amf");
 
-#if WINDOWS_PHONE_APP
-            filePicker.PickSingleFileAndContinue();
-#else
             var file = await filePicker.PickSingleFileAsync();
 
             await _LoadFileAsync(file);
-#endif
-        }
-
-        private async Task _LoadFileAsync(StorageFile file)
-        {
-            if (file != null)
-            {
-                _ProgressBar.Visibility = Windows.UI.Xaml.Visibility.Visible;
-                _ProgressBar.IsEnabled = true;
-
-                var converter = await ConversionFactory.GetConverter(file);
-                _LastJsonLoaded = await converter.ToJsonAsync();
-
-                await WebHost.Interpreter.EvalAsync(string.Format("app.loadBabylonModel('{0}');", _LastJsonLoaded));
-
-                _ProgressBar.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-                _ProgressBar.IsEnabled = false;
-
-                SaveButton.IsEnabled = true;
-            }
         }
 
         private async void SaveConverted_Click(object sender, RoutedEventArgs e)
@@ -142,11 +94,24 @@ namespace BabylonJs.WebView
             }
         }
 
-        private ProgressBar _ProgressBar;
-
-        private void ProgressBar_Loaded(object sender, RoutedEventArgs e)
+        private async Task _LoadFileAsync(StorageFile file)
         {
-            _ProgressBar = sender as ProgressBar;
+            if (file != null)
+            {
+                ProgressBar.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                ProgressBar.IsEnabled = true;
+
+                var converter = await ConversionFactory.GetConverter(file);
+                _LastJsonLoaded = await converter.ToJsonAsync();
+
+                await WebHost.Interpreter.EvalAsync(string.Format("app.loadBabylonModel('{0}');", _LastJsonLoaded));
+
+                ProgressBar.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                ProgressBar.IsEnabled = false;
+
+                SaveButton.IsEnabled = true;
+            }
         }
+
     }
 }

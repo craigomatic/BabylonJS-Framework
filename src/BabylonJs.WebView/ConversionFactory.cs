@@ -12,11 +12,11 @@ namespace BabylonJs.WebView
     {
         public static async Task<IBabylonConverter> GetConverter(StorageFile file)
         {
-            if(file.FileType.EndsWith("stl"))
+            if (file.FileType.EndsWith("stl"))
             {
                 return new StlConverter((await file.OpenReadAsync()).AsStream());
             }
-            else if(file.FileType.EndsWith("amf"))
+            else if (file.FileType.EndsWith("amf"))
             {
                 return new AmfConverter((await file.OpenReadAsync()).AsStream());
             }

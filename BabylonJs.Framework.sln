@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BabylonJs.Framework", "src\BabylonJs.Framework\BabylonJs.Framework.csproj", "{5B2C998A-2A37-446C-B002-1328692A452C}"
 EndProject
@@ -16,94 +16,48 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{ECC3
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{A1BE3616-81F4-44AF-BF7C-DD6FEA4DE9AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BabylonJs.WebView.Windows", "src\BabylonJs.WebView\BabylonJs.WebView.Windows\BabylonJs.WebView.Windows.csproj", "{4E4E3458-2164-4271-AC03-48259543001D}"
-EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "BabylonJs.WebView.Shared", "src\BabylonJs.WebView\BabylonJs.WebView.Shared\BabylonJs.WebView.Shared.shproj", "{6FBF2E0C-083A-4655-812B-EC971394BA4B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BabylonJs.WebView.WindowsPhone", "src\BabylonJs.WebView\BabylonJs.WebView.WindowsPhone\BabylonJs.WebView.WindowsPhone.csproj", "{DE385018-5F9D-4942-985A-384E19021D90}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BabylonJs.WebView", "BabylonJs.WebView", "{33019190-284F-4F4F-853B-25E42969AC36}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BabylonJs.WebView", "src\BabylonJs.WebView\BabylonJs.WebView.csproj", "{53F59800-A63E-4A75-87E9-D79D7E88F220}"
 EndProject
 Global
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		src\BabylonJs.WebView\BabylonJs.WebView.Shared\BabylonJs.WebView.Shared.projitems*{6fbf2e0c-083a-4655-812b-ec971394ba4b}*SharedItemsImports = 13
-		src\BabylonJs.WebView\BabylonJs.WebView.Shared\BabylonJs.WebView.Shared.projitems*{de385018-5f9d-4942-985a-384e19021d90}*SharedItemsImports = 4
-		src\BabylonJs.WebView\BabylonJs.WebView.Shared\BabylonJs.WebView.Shared.projitems*{4e4e3458-2164-4271-ac03-48259543001d}*SharedItemsImports = 4
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
 		Debug|ARM = Debug|ARM
 		Debug|x64 = Debug|x64
 		Debug|x86 = Debug|x86
-		Release|Any CPU = Release|Any CPU
 		Release|ARM = Release|ARM
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5B2C998A-2A37-446C-B002-1328692A452C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5B2C998A-2A37-446C-B002-1328692A452C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B2C998A-2A37-446C-B002-1328692A452C}.Debug|ARM.ActiveCfg = Debug|Any CPU
 		{5B2C998A-2A37-446C-B002-1328692A452C}.Debug|x64.ActiveCfg = Debug|Any CPU
 		{5B2C998A-2A37-446C-B002-1328692A452C}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{5B2C998A-2A37-446C-B002-1328692A452C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5B2C998A-2A37-446C-B002-1328692A452C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5B2C998A-2A37-446C-B002-1328692A452C}.Release|ARM.ActiveCfg = Release|Any CPU
 		{5B2C998A-2A37-446C-B002-1328692A452C}.Release|x64.ActiveCfg = Release|Any CPU
 		{5B2C998A-2A37-446C-B002-1328692A452C}.Release|x86.ActiveCfg = Release|Any CPU
-		{4E4E3458-2164-4271-AC03-48259543001D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4E4E3458-2164-4271-AC03-48259543001D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4E4E3458-2164-4271-AC03-48259543001D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{4E4E3458-2164-4271-AC03-48259543001D}.Debug|ARM.ActiveCfg = Debug|ARM
-		{4E4E3458-2164-4271-AC03-48259543001D}.Debug|ARM.Build.0 = Debug|ARM
-		{4E4E3458-2164-4271-AC03-48259543001D}.Debug|ARM.Deploy.0 = Debug|ARM
-		{4E4E3458-2164-4271-AC03-48259543001D}.Debug|x64.ActiveCfg = Debug|x64
-		{4E4E3458-2164-4271-AC03-48259543001D}.Debug|x64.Build.0 = Debug|x64
-		{4E4E3458-2164-4271-AC03-48259543001D}.Debug|x64.Deploy.0 = Debug|x64
-		{4E4E3458-2164-4271-AC03-48259543001D}.Debug|x86.ActiveCfg = Debug|x86
-		{4E4E3458-2164-4271-AC03-48259543001D}.Debug|x86.Build.0 = Debug|x86
-		{4E4E3458-2164-4271-AC03-48259543001D}.Debug|x86.Deploy.0 = Debug|x86
-		{4E4E3458-2164-4271-AC03-48259543001D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4E4E3458-2164-4271-AC03-48259543001D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4E4E3458-2164-4271-AC03-48259543001D}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{4E4E3458-2164-4271-AC03-48259543001D}.Release|ARM.ActiveCfg = Release|ARM
-		{4E4E3458-2164-4271-AC03-48259543001D}.Release|ARM.Build.0 = Release|ARM
-		{4E4E3458-2164-4271-AC03-48259543001D}.Release|ARM.Deploy.0 = Release|ARM
-		{4E4E3458-2164-4271-AC03-48259543001D}.Release|x64.ActiveCfg = Release|x64
-		{4E4E3458-2164-4271-AC03-48259543001D}.Release|x64.Build.0 = Release|x64
-		{4E4E3458-2164-4271-AC03-48259543001D}.Release|x64.Deploy.0 = Release|x64
-		{4E4E3458-2164-4271-AC03-48259543001D}.Release|x86.ActiveCfg = Release|x86
-		{4E4E3458-2164-4271-AC03-48259543001D}.Release|x86.Build.0 = Release|x86
-		{4E4E3458-2164-4271-AC03-48259543001D}.Release|x86.Deploy.0 = Release|x86
-		{DE385018-5F9D-4942-985A-384E19021D90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DE385018-5F9D-4942-985A-384E19021D90}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DE385018-5F9D-4942-985A-384E19021D90}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{DE385018-5F9D-4942-985A-384E19021D90}.Debug|ARM.ActiveCfg = Debug|ARM
-		{DE385018-5F9D-4942-985A-384E19021D90}.Debug|ARM.Build.0 = Debug|ARM
-		{DE385018-5F9D-4942-985A-384E19021D90}.Debug|ARM.Deploy.0 = Debug|ARM
-		{DE385018-5F9D-4942-985A-384E19021D90}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{DE385018-5F9D-4942-985A-384E19021D90}.Debug|x86.ActiveCfg = Debug|x86
-		{DE385018-5F9D-4942-985A-384E19021D90}.Debug|x86.Build.0 = Debug|x86
-		{DE385018-5F9D-4942-985A-384E19021D90}.Debug|x86.Deploy.0 = Debug|x86
-		{DE385018-5F9D-4942-985A-384E19021D90}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DE385018-5F9D-4942-985A-384E19021D90}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DE385018-5F9D-4942-985A-384E19021D90}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{DE385018-5F9D-4942-985A-384E19021D90}.Release|ARM.ActiveCfg = Release|ARM
-		{DE385018-5F9D-4942-985A-384E19021D90}.Release|ARM.Build.0 = Release|ARM
-		{DE385018-5F9D-4942-985A-384E19021D90}.Release|ARM.Deploy.0 = Release|ARM
-		{DE385018-5F9D-4942-985A-384E19021D90}.Release|x64.ActiveCfg = Release|Any CPU
-		{DE385018-5F9D-4942-985A-384E19021D90}.Release|x86.ActiveCfg = Release|x86
-		{DE385018-5F9D-4942-985A-384E19021D90}.Release|x86.Build.0 = Release|x86
-		{DE385018-5F9D-4942-985A-384E19021D90}.Release|x86.Deploy.0 = Release|x86
+		{53F59800-A63E-4A75-87E9-D79D7E88F220}.Debug|ARM.ActiveCfg = Debug|ARM
+		{53F59800-A63E-4A75-87E9-D79D7E88F220}.Debug|ARM.Build.0 = Debug|ARM
+		{53F59800-A63E-4A75-87E9-D79D7E88F220}.Debug|ARM.Deploy.0 = Debug|ARM
+		{53F59800-A63E-4A75-87E9-D79D7E88F220}.Debug|x64.ActiveCfg = Debug|x64
+		{53F59800-A63E-4A75-87E9-D79D7E88F220}.Debug|x64.Build.0 = Debug|x64
+		{53F59800-A63E-4A75-87E9-D79D7E88F220}.Debug|x64.Deploy.0 = Debug|x64
+		{53F59800-A63E-4A75-87E9-D79D7E88F220}.Debug|x86.ActiveCfg = Debug|x86
+		{53F59800-A63E-4A75-87E9-D79D7E88F220}.Debug|x86.Build.0 = Debug|x86
+		{53F59800-A63E-4A75-87E9-D79D7E88F220}.Debug|x86.Deploy.0 = Debug|x86
+		{53F59800-A63E-4A75-87E9-D79D7E88F220}.Release|ARM.ActiveCfg = Release|ARM
+		{53F59800-A63E-4A75-87E9-D79D7E88F220}.Release|ARM.Build.0 = Release|ARM
+		{53F59800-A63E-4A75-87E9-D79D7E88F220}.Release|ARM.Deploy.0 = Release|ARM
+		{53F59800-A63E-4A75-87E9-D79D7E88F220}.Release|x64.ActiveCfg = Release|x64
+		{53F59800-A63E-4A75-87E9-D79D7E88F220}.Release|x64.Build.0 = Release|x64
+		{53F59800-A63E-4A75-87E9-D79D7E88F220}.Release|x64.Deploy.0 = Release|x64
+		{53F59800-A63E-4A75-87E9-D79D7E88F220}.Release|x86.ActiveCfg = Release|x86
+		{53F59800-A63E-4A75-87E9-D79D7E88F220}.Release|x86.Build.0 = Release|x86
+		{53F59800-A63E-4A75-87E9-D79D7E88F220}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{5B2C998A-2A37-446C-B002-1328692A452C} = {A1BE3616-81F4-44AF-BF7C-DD6FEA4DE9AA}
-		{4E4E3458-2164-4271-AC03-48259543001D} = {33019190-284F-4F4F-853B-25E42969AC36}
-		{6FBF2E0C-083A-4655-812B-EC971394BA4B} = {33019190-284F-4F4F-853B-25E42969AC36}
-		{DE385018-5F9D-4942-985A-384E19021D90} = {33019190-284F-4F4F-853B-25E42969AC36}
-		{33019190-284F-4F4F-853B-25E42969AC36} = {ECC326C4-1F09-48EC-9702-510D86306164}
+		{53F59800-A63E-4A75-87E9-D79D7E88F220} = {ECC326C4-1F09-48EC-9702-510D86306164}
 	EndGlobalSection
 EndGlobal
